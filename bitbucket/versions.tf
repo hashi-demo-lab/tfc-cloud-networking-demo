@@ -1,8 +1,10 @@
 terraform {
   required_providers {
     bitbucket = {
-      source = "DrFaust92/bitbucket"
-      version = "2.40.0"
+      source = "zahiar/bitbucket"
+      version = "1.6.0"
     }
   }
+
+  required_version = "~> 1.8.0"
 }

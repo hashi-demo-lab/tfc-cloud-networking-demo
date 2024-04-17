@@ -9,8 +9,4 @@
 
 
 provider "bitbucket" {
-  username = var.bitbucket_username
-  #password via env BITBUCKET_PASSWORD
 }
-
-

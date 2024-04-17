@@ -1,3 +1,3 @@
-* Pre-reqs
+# Pre-reqs
 
-``` export export BITBUCKET_PASSWORD=<BITBUCKET_PASSWORD> ```
+```export BITBUCKET_PASSWORD=<BITBUCKET_PASSWORD> ```
