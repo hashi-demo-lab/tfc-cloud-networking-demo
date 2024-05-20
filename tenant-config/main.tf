@@ -161,11 +161,17 @@ module "project_oidc_gcp" {
   tfc_organization_name        = var.tfc_organization_name
   tfc_project_name             = module.consumer_project[each.key].project_name
   tfc_project_id               = module.consumer_project[each.key].project_id
-  gcp_project_id               = module.consumer_project[each.key].gcp_project_id
+  gcp_project_id               = var.gcp_project_id
 
 }
 
 output "oidc_aws" {
   value = { for key, value in module.consumer_project : key => value if value.enable_oidc == "aws" }
+  
+}
+
+
+output "oidc_gcp" {
+  value = { for key, value in module.consumer_project : key => value if value.enable_oidc == "gcp" }
   
 }
