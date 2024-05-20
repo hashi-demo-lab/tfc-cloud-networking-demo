@@ -16,8 +16,8 @@ terraform {
     organization = "tfc-demo-au"
 
     workspaces {
-      name = "bu1_workspace_control"
-      project = "bu1_control"
+      name = "networks_control"
+      project = "networks_control"
     }
   }
 

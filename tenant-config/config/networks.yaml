@@ -1,8 +1,9 @@
 bu: networks
 projects:
   tenant1_net_gcp_prod:
-    name: 
-    description: 
+    name: tenant1_net_gcp_prod
+    description:
+    enable_oidc: gcp
     team_project_access:
       tenant1_net_gcp_prod_maintain:
         team:
@@ -11,8 +12,9 @@ projects:
         team:
           access: "write"
   tenant1_net_aws_prod:
-    name: 
-    description: 
+    name: tenant1_net_aws_prod
+    description: tenant1 networks aws prod
+    enable_oidc: aws
     team_project_access:
       tenant1_net_aws_prod_maintain:
         team:
@@ -21,8 +23,9 @@ projects:
         team:
           access: "write"
   tenant2_net_aws_prod:
-    name: 
+    name: tenant2_net_aws_prod
     description: 
+    enable_oidc: aws
     team_project_access:
       tenant2_net_aws_prod_maintain:
         team:
