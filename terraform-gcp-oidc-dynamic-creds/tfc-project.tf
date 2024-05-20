@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: MPL-2.0
 
 resource "tfe_variable_set" "creds" {
-  name         = "GCP Dynamic Creds: ${var.tfc_workspace_project_name} Project"
+  name         = "GCP Dynamic Creds: ${var.tfc_project_name} Project"
   description  = "GCP Auth & Role details for Dynamic AWS Creds"
   organization = var.tfc_organization_name
 }
@@ -42,7 +42,7 @@ resource "tfe_variable" "tfc_gcp_service_account_email" {
 
 resource "tfe_project_variable_set" "creds_to_project" {
   variable_set_id = tfe_variable_set.creds.id
-  project_id      = var.tfc_workspace_project_id
+  project_id      = var.tfc_project_id
 }
 
 
