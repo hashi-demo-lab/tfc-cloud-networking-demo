@@ -6,13 +6,18 @@ data "tls_certificate" "tfc_certificate" {
 }
 
 # Creates an OIDC provider which is restricted to
-resource "aws_iam_openid_connect_provider" "tfc_provider" {
+/* resource "aws_iam_openid_connect_provider" "tfc_provider" {
   url             = data.tls_certificate.tfc_certificate.url
   client_id_list  = [var.tfc_aws_audience]
   thumbprint_list = [data.tls_certificate.tfc_certificate.certificates[0].sha1_fingerprint]
-}
+} */
 ############################################
 
+/* 
+
+data "aws_iam_openid_connect_provider" "tfc_provider" {
+  arn = var.oidc_provider_arn
+} */
 
 resource "tfe_team" "bu_admin" {
   for_each = local.tenant
@@ -131,18 +136,35 @@ module "consumer_project" {
   custom_team_project_access = try(each.value.value.custom_team_project_access, {})
 
   bu_control_admins_id = tfe_team.bu_admin[each.value.bu].id
+  enable_oidc          = coalesce(each.value.value.enable_oidc, "false")
 }
 
 
 module "project_oidc_aws" {
   source   = "github.com/hashi-demo-lab/tfc-dpaas-demo//terraform-aws-oidc-dynamic-creds"
-  for_each = module.consumer_project
+  for_each = { for key, value in module.consumer_project : key => value if value.enable_oidc == "aws" }
 
-  oidc_provider_arn            = aws_iam_openid_connect_provider.tfc_provider.arn
+  oidc_provider_arn            = var.oidc_provider_arn
   oidc_provider_client_id_list = [var.tfc_aws_audience]
   tfc_organization_name        = var.tfc_organization_name
   cred_type                    = var.cred_type
   tfc_project_name             = module.consumer_project[each.key].project_name
   tfc_project_id               = module.consumer_project[each.key].project_id
 
+}
+
+
+module "project_oidc_gcp" {
+  source   = "github.com/hashi-demo-lab/tfc-cloud-networking-demo//terraform-gcp-oidc-dynamic-creds"
+  for_each = { for key, value in module.consumer_project : key => value if value.enable_oidc == "gcp" }
+
+  tfc_organization_name        = var.tfc_organization_name
+  tfc_project_name             = module.consumer_project[each.key].project_name
+  tfc_project_id               = module.consumer_project[each.key].project_id
+  gcp_project_id               = module.consumer_project[each.key].gcp_project_id
+
+
+output "oidc_aws" {
+  value = { for key, value in module.consumer_project : key => value if value.enable_oidc == "aws" }
+  
 }

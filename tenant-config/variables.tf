@@ -27,6 +27,12 @@ variable "tfc_aws_audience" {
   default     = "aws.workload.identity"
 }
 
+variable "oidc_provider_arn" {
+  type        = string
+  description = "oidc provider arn"
+  default     = "arn:aws:iam::855831148133:oidc-provider/app.terraform.io"
+}
+
 variable "tfc_project_name" {
   type        = string
   description = "tfc project name"
@@ -39,11 +45,6 @@ variable "tfc_project_id" {
   default     = ""
 }
 
-variable "oidc_provider_arn" {
-  type        = string
-  description = "oidc provider arn"
-  default     = null
-}
 
 variable "oidc_provider_client_id_list" {
   type        = list(string)
@@ -56,3 +57,4 @@ variable "region" {
   description = "aws region"
   default     = "ap-southeast-2"
 }
+
