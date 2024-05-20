@@ -1,10 +1,6 @@
 # Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: MPL-2.0
 
-provider "tfe" {
-  hostname = var.tfc_hostname
-}
-
 resource "tfe_variable_set" "creds" {
   name         = "GCP Dynamic Creds: ${var.tfc_workspace_project_name} Project"
   description  = "GCP Auth & Role details for Dynamic AWS Creds"
