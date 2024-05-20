@@ -46,14 +46,6 @@ variable "gcp_service_list" {
   ]
 }
 
-variable "tfc_project_name" {
-  type        = string
-  description = "The name of the project the workspace lives in"
-  default     = "*"
-
-  # TODO: Condition, if workspace name and id not set, then this must be something other than *
-}
-
 variable "tfc_project_id" {
   type        = string
   description = "The ID of the project the workspace lives in"
