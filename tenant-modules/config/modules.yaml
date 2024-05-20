@@ -1,0 +1,19 @@
+modules:
+  terraform-aws-landingzone:
+    module_name: "terraform-aws-landingzone"
+    module_short_name: landingzone
+    provider: "aws"
+    tests_enabled: true
+    labels:
+      semver:patch: ffff00
+      semver:minor: ff8a00
+      semver:major: ff0000
+    pipeline_vars:
+      TFE_ORG: tfc-demo-au
+      TFE_MODULE: landingzone
+      TFE_PROVIDER: aws
+
+
+
+
+      
