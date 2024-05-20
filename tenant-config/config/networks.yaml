@@ -1,0 +1,32 @@
+bu: networks
+projects:
+  tenant1_net_gcp_prod:
+    name: 
+    description: 
+    team_project_access:
+      tenant1_net_gcp_prod_maintain:
+        team:
+          access: "maintain"
+      tenant1_net_gcp_prod_write:
+        team:
+          access: "write"
+  tenant1_net_aws_prod:
+    name: 
+    description: 
+    team_project_access:
+      tenant1_net_aws_prod_maintain:
+        team:
+          access: "maintain"
+      tenant1_net_aws_prod_write:
+        team:
+          access: "write"
+  tenant2_net_aws_prod:
+    name: 
+    description: 
+    team_project_access:
+      tenant2_net_aws_prod_maintain:
+        team:
+          access: "maintain"
+      tenant2_net_aws_prod_write:
+        team:
+          access: "write"
