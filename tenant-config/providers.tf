@@ -2,6 +2,16 @@ provider "aws" {
   region = var.region
 }
 
+provider "google" {
+  project = var.gcp_project_id
+  region  = "global"
+}
+
+provider "google-beta" {
+  project = var.gcp_project_id
+  region  = "global"
+}
+
 terraform {
   cloud {
     hostname     = "app.terraform.io"

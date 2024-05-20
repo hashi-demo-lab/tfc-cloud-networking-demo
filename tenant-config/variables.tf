@@ -57,4 +57,9 @@ variable "region" {
   description = "aws region"
   default     = "ap-southeast-2"
 }
+variable "gcp_project_id" {
+  type        = string
+  description = "gcp project id"
+  default = "hc-74c5998971954543b85856b66ab"
+}
 

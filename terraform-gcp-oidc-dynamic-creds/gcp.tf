@@ -1,15 +1,7 @@
 # Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: MPL-2.0
 
-provider "google" {
-  project = var.gcp_project_id
-  region  = "global"
-}
 
-provider "google-beta" {
-  project = var.gcp_project_id
-  region  = "global"
-}
 
 # Data source used to get the project number programmatically.
 #
