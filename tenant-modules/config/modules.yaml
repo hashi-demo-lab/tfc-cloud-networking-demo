@@ -12,6 +12,19 @@ modules:
       TFE_ORG: tfc-demo-au
       TFE_MODULE: landingzone
       TFE_PROVIDER: aws
+  terraform-google-network:
+    module_name: "terraform-google-network"
+    module_short_name: network
+    provider: "google"
+    tests_enabled: true
+    labels:
+      semver:patch: ffff00
+      semver:minor: ff8a00
+      semver:major: ff0000
+    pipeline_vars:
+      TFE_ORG: tfc-demo-au
+      TFE_MODULE: network
+      TFE_PROVIDER: google
 
 
 
