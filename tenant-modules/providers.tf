@@ -14,15 +14,6 @@ terraform {
     }
   }
 
-  /*   cloud {
-    organization = "tfc-demo-au"
-
-    workspaces {
-      name = "bu1_workspace_control"
-      project = "bu1_control"
-    }
-  } */
-
 }
 
 
