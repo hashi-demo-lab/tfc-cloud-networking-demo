@@ -1,5 +1,5 @@
 workspace_name: tenant1_net_aws_test_ws
-project_name: tenant1_net_aws_test
+project_name: networks_tenant1_net_aws_test
 create_repo: false
 create_variable_set: false
 vcs_repo:

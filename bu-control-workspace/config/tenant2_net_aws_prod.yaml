@@ -1,5 +1,5 @@
 workspace_name: tenant2_net_aws_prod_ws
-project_name: tenant2_net_aws_prod
+project_name: networks_tenant2_net_aws_prod
 create_repo: false
 create_variable_set: false
 vcs_repo:
