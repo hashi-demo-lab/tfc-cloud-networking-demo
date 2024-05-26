@@ -23,6 +23,14 @@ projects:
       tenant1_net_aws_prod_write:
         team:
           access: "write"
+  tenant1_net_aws_test:
+    name: tenant1_net_aws_test
+    description: tenant1 networks aws test
+    enable_oidc: aws
+    team_project_access:
+      tenant1_net_aws_test_maintain:
+        team:
+          access: "maintain"
   tenant2_net_aws_prod:
     name: tenant2_net_aws_prod
     description: 

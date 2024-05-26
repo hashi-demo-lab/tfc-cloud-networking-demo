@@ -1,0 +1,13 @@
+workspace_name: tenant1_net_aws_test_ws
+project_name: tenant1_net_aws_test
+create_variable_set: false
+vcs_repo:
+  identifier: hashi-demo-lab/network-aws-example
+  branch: test
+variables:
+      network_yaml_file:
+        category: terraform
+        description:
+        hcl: false
+        sensitive: false
+        value: tenant1_net_aws_test.yaml
