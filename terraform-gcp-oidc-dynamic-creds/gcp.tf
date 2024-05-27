@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: MPL-2.0
 locals {
   tfc_project_name = replace(var.tfc_project_name, "_", "-")
+  workload_identity_pool_id = substr("${local.tfc_project_name}-pool", 0, 32)
 }
 
 
@@ -25,7 +26,7 @@ resource "google_project_service" "services" {
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/iam_workload_identity_pool
 resource "google_iam_workload_identity_pool" "tfc_pool" {
   provider                  = google-beta
-  workload_identity_pool_id = "${local.tfc_project_name}my-tfc-pool"
+  workload_identity_pool_id = local.workload_identity_pool_id
 }
 
 # Creates an identity pool provider which uses an attribute condition
