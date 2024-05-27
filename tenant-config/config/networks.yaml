@@ -3,6 +3,7 @@ projects:
   tenant1_net_gcp_prod:
     name: tenant1_net_gcp_prod
     description:
+    enable_oidc: false
     gcp_project_id: hc-74c5998971954543b85856b66ab
     team_project_access:
       tenant1_net_gcp_prod_maintain:
