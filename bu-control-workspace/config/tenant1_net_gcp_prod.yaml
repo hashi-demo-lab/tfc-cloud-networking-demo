@@ -1,4 +1,4 @@
-workspace_name: networks_tenant1_net_gcp_ws
+workspace_name: tenant1_net_gcp_prod_ws
 project_name: networks_tenant1_net_gcp_prod
 create_repo: false
 create_variable_set: false
