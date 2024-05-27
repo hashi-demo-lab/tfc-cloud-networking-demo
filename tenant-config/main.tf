@@ -154,7 +154,7 @@ module "project_oidc_aws" {
 }
 
 
-module "project_oidc_gcp_creds" {
+module "project_oidc_gcp" {
   source   = "github.com/hashi-demo-lab/tfc-cloud-networking-demo//terraform-gcp-oidc-dynamic-creds"
   for_each = { for key, value in module.consumer_project : key => value if value.enable_oidc == "gcp" }
 
