@@ -42,3 +42,11 @@ projects:
       tenant2_net_aws_prod_write:
         team:
           access: "write"
+  tenant3_net_aws_prod:
+    name: tenant3_net_aws_prod
+    description: 
+    enable_oidc: aws
+    team_project_access:
+      tenant3_net_aws_prod_maintain:
+        team:
+          access: "maintain"
