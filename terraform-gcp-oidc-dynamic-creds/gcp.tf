@@ -1,6 +1,8 @@
 # Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: MPL-2.0
-
+locals {
+  tfc_project_name = replace(var.tfc_project_name, "_", "-")
+}
 
 
 # Data source used to get the project number programmatically.
@@ -23,7 +25,7 @@ resource "google_project_service" "services" {
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/iam_workload_identity_pool
 resource "google_iam_workload_identity_pool" "tfc_pool" {
   provider                  = google-beta
-  workload_identity_pool_id = "${var.tfc_project_name}my-tfc-pool"
+  workload_identity_pool_id = "${local.tfc_project_name}my-tfc-pool"
 }
 
 # Creates an identity pool provider which uses an attribute condition
@@ -64,7 +66,7 @@ resource "google_iam_workload_identity_pool_provider" "tfc_provider" {
 #
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_service_account
 resource "google_service_account" "tfc_service_account" {
-  account_id   = "${var.tfc_project_name}tfc-service-account"
+  account_id   = "${local.tfc_project_name}tfc-service-account"
   display_name = "Terraform Cloud Service Account"
 }
 
