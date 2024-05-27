@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: MPL-2.0
 locals {
   tfc_project_name = replace(var.tfc_project_name, "_", "")
-  workload_identity_pool_id = substr("${local.tfc_project_name}-tfcpool", 0, 32)
+  workload_identity_pool_id = substr("${local.tfc_project_name}-pool", 0, 32)
   trimmed_account_id = substr("${local.tfc_project_name}sa", 0, 30)
 }
 
