@@ -4,7 +4,6 @@ locals {
   tfc_project_name = replace(var.tfc_project_name, "_", "")
   workload_identity_pool_id = substr("${local.tfc_project_name}-pool", 0, 32)
   trimmed_account_id = substr("${local.tfc_project_name}sa", 0, 30)
-  account_id   = regex_replace(local.trimmed_account_id, "-$", "a")
 }
 
 
@@ -69,7 +68,7 @@ resource "google_iam_workload_identity_pool_provider" "tfc_provider" {
 #
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_service_account
 resource "google_service_account" "tfc_service_account" {
-  account_id   = local.account_id
+  account_id   = local.trimmed_account_id
   display_name = "Terraform Cloud Service Account"
 }
 
