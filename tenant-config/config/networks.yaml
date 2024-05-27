@@ -12,6 +12,15 @@ projects:
       tenant1_net_gcp_prod_write:
         team:
           access: "write"
+  tenant1_net_gcp_test:
+    name: tenant1_net_gcp_test
+    description:
+    enable_oidc: gcp
+    gcp_project_id: hc-74c5998971954543b85856b66ab
+    team_project_access:
+      tenant1_net_gcp_test_maintain:
+        team:
+          access: "maintain"
   tenant1_net_aws_prod:
     name: tenant1_net_aws_prod
     description: tenant1 networks aws prod
