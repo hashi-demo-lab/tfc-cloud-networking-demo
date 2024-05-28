@@ -1,0 +1,14 @@
+workspace_name: tenant4_net_aws_prod_ws
+project_name: networks_tenant4_net_aws_prod
+create_repo: false
+create_variable_set: false
+vcs_repo:
+  identifier: hashi-demo-lab/network-aws-example
+  branch: main
+variables:
+      network_yaml_file:
+        category: terraform
+        description:
+        hcl: false
+        sensitive: false
+        value: tenant4_net_aws_prod.yaml

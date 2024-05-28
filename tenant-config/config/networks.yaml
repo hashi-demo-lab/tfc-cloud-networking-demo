@@ -50,3 +50,11 @@ projects:
       tenant3_net_aws_prod_maintain:
         team:
           access: "maintain"
+  tenant4_net_aws_prod:
+    name: tenant4_net_aws_prod
+    description: 
+    enable_oidc: aws
+    team_project_access:
+      tenant4_net_aws_prod_maintain:
+        team:
+          access: "maintain"
